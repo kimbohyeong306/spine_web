@@ -1,0 +1,470 @@
+new_C1.png
+size:4087,3752
+filter:Linear,Linear
+Acc 1
+bounds:2039,2297,334,319
+Acc 2
+bounds:1626,3692,168,58
+Acc 4
+bounds:2492,3075,211,300
+offsets:1,1,214,303
+rotate:90
+Acc 5
+bounds:3933,3600,150,152
+rotate:90
+Back-hair
+bounds:2,1735,606,330
+offsets:0,40,607,370
+Base-hair
+bounds:3324,930,605,443
+offsets:0,0,605,444
+F-hair 1
+bounds:3390,2762,233,365
+offsets:0,1,233,366
+rotate:90
+F-hair 2
+bounds:2,2979,224,354
+rotate:90
+F-hair 3
+bounds:2,3596,123,360
+offsets:1,2,124,362
+rotate:90
+F-hair 4
+bounds:1185,3532,158,392
+offsets:0,2,158,394
+rotate:90
+FX
+bounds:2,345,569,546
+Head 2
+bounds:3079,3652,98,148
+offsets:0,1,98,152
+rotate:90
+L-ARM SHIDO
+bounds:3060,3056,219,269
+offsets:7,18,227,299
+rotate:90
+L-HAND 1
+bounds:3134,3279,194,241
+offsets:2,0,200,248
+rotate:90
+L-HAND 2
+bounds:2059,3325,189,266
+offsets:18,10,223,282
+rotate:90
+L-HAND 3
+bounds:2794,3484,183,254
+rotate:90
+L-HAND 3.1
+bounds:1345,3695,55,165
+rotate:90
+L-HAND 4
+bounds:3379,3244,194,234
+offsets:21,21,233,255
+rotate:90
+L-HAND BASE
+bounds:3566,3442,183,245
+rotate:90
+L-HAND UB
+bounds:2329,3324,190,257
+offsets:0,1,190,258
+rotate:90
+L-LEG SHIDO
+bounds:611,782,445,770
+offsets:4,191,457,961
+rotate:90
+L-WEPON
+bounds:2746,1418,396,650
+offsets:0,1,397,651
+rotate:90
+L-arm 1
+bounds:329,2686,250,605
+offsets:0,36,250,642
+rotate:90
+L-arm 2
+bounds:2392,2554,265,441
+rotate:90
+L-bal
+bounds:2436,2834,288,237
+offsets:0,0,1630,237
+L-cos 1
+bounds:1432,3138,365,203
+offsets:0,1,365,204
+L-cos back
+bounds:2,2717,258,323
+rotate:90
+L-eye DN
+bounds:631,3707,163,43
+offsets:11,10,175,55
+L-eye MID
+bounds:3578,3644,221,106
+offsets:9,13,235,130
+L-eye TOP
+bounds:965,3702,198,48
+offsets:0,1,198,49
+L-eye base
+bounds:2040,3687,121,63
+L-hair
+bounds:612,1721,344,669
+rotate:90
+L-leg 1
+bounds:1269,117,448,972
+offsets:2,0,459,972
+rotate:90
+L-leg 2
+bounds:2,1342,375,995
+offsets:1,1,376,996
+rotate:90
+L-leg 3
+bounds:2074,2620,271,314
+offsets:10,11,288,326
+rotate:90
+L-lens 1
+bounds:2246,3677,73,83
+offsets:1,1,74,84
+rotate:90
+L-lens 2
+bounds:2333,3675,75,79
+offsets:1,0,77,80
+rotate:90
+NOWS
+bounds:575,3714,36,52
+offsets:8,3,48,64
+rotate:90
+R-ARM SHIDO
+bounds:938,2658,263,342
+offsets:5,26,271,389
+rotate:90
+R-HAND 1
+bounds:811,3155,200,230
+rotate:90
+R-HAND 2
+bounds:2851,3281,192,279
+offsets:16,7,223,293
+rotate:90
+R-HAND 3
+bounds:2796,3064,213,260
+rotate:90
+R-HAND 3..1
+bounds:2416,3675,75,157
+rotate:90
+R-HAND BASE
+bounds:3815,3413,183,245
+rotate:90
+R-HAND UB
+bounds:2590,3290,190,257
+offsets:0,1,190,258
+rotate:90
+R-LEG SHIDO
+bounds:1001,1231,427,696
+offsets:15,106,443,802
+rotate:90
+R-WEPON
+bounds:3400,1377,399,650
+rotate:90
+R-arm 1
+bounds:2,2396,286,631
+offsets:1,0,287,631
+rotate:90
+R-arm 2
+bounds:3596,1780,358,464
+offsets:0,2,361,466
+rotate:90
+R-bal
+bounds:3617,3214,429,195
+offsets:1201,39,1630,237
+R-cos 1
+bounds:1801,3118,365,203
+offsets:0,1,365,204
+R-cos back
+bounds:3759,2747,248,320
+rotate:90
+R-dres1
+bounds:1868,1965,328,405
+rotate:90
+R-eye DN
+bounds:1167,3700,107,50
+offsets:220,6,331,157
+R-eye MID
+bounds:2577,3675,140,75
+offsets:30,12,173,91
+R-eye TOP
+bounds:123,3725,118,25
+offsets:1,1,120,26
+R-eye base
+bounds:1950,3688,86,62
+offsets:1,0,87,62
+R-hair
+bounds:3333,2999,211,588
+rotate:90
+R-leg 1
+bounds:2352,973,441,968
+offsets:14,0,455,969
+rotate:90
+R-leg 2
+bounds:1825,1503,379,917
+offsets:1,0,380,917
+rotate:90
+R-leg 3
+bounds:2835,2173,425,320
+offsets:0,3,427,323
+R-lens 1
+bounds:2165,3687,63,77
+offsets:1,0,64,77
+rotate:90
+R-lens 2
+bounds:1798,3691,59,76
+offsets:0,1,60,77
+rotate:90
+STAR 1
+bounds:3052,3477,168,510
+offsets:1,1,169,511
+rotate:90
+STAR 2
+bounds:516,3368,169,511
+rotate:90
+STAR 3
+bounds:1031,3359,169,510
+offsets:0,1,169,511
+rotate:90
+STAR 4
+bounds:2,3407,168,510
+offsets:1,1,169,511
+rotate:90
+STAR 5
+bounds:1545,3345,169,510
+offsets:0,1,169,511
+rotate:90
+Shodow big
+bounds:1385,569,2562,357
+Shodow-head
+bounds:1285,1662,536,403
+offsets:48,29,586,460
+Top
+bounds:1701,1064,647,435
+offsets:0,1,652,437
+WEPON ACC 1
+bounds:3540,2448,295,413
+offsets:0,1,295,414
+rotate:90
+WEPON ACC 2
+bounds:3803,3629,121,126
+offsets:0,3,121,129
+rotate:90
+hair
+bounds:575,265,513,690
+offsets:1,3,515,693
+rotate:90
+hair 2
+bounds:2837,2497,261,699
+rotate:90
+hat
+bounds:637,2354,300,338
+offsets:223,366,1024,1024
+rotate:90
+mouse
+bounds:74,3728,45,22
+offsets:0,1,49,23
+pants
+bounds:979,2352,658,293
+offsets:70,29,812,1346
+skin2/ACC-HAIR
+bounds:3264,2142,716,302
+skin2/ACC-L
+bounds:1976,3518,153,814
+rotate:90
+skin2/ACC-L ARM
+bounds:963,3541,155,218
+offsets:1,0,156,218
+rotate:90
+skin2/ACC-L ARMODR
+bounds:3456,2,563,585
+offsets:0,0,839,585
+rotate:90
+skin2/ACC-L-GOLD
+bounds:2170,3110,210,318
+rotate:90
+skin2/ACC-MID
+bounds:3231,3652,98,113
+offsets:1,0,99,113
+rotate:90
+skin2/ACC-R
+bounds:1630,2895,211,802
+offsets:1,0,212,803
+rotate:90
+skin2/ACC-R ARM
+bounds:731,3557,143,228
+rotate:90
+skin2/ACC-R ARMODR
+bounds:2277,1886,353,533
+offsets:0,1,354,535
+rotate:90
+skin2/ACC-R-GOLD
+bounds:1307,2908,226,319
+offsets:1,0,227,319
+rotate:90
+skin2/ACC-TOP
+bounds:1045,3153,383,202
+offsets:0,2,383,204
+skin2/Base-hair
+bounds:2,895,605,443
+offsets:0,0,605,444
+skin2/F-hair 1
+bounds:3020,2764,231,366
+offsets:2,0,233,366
+rotate:90
+skin2/F-hair 2
+bounds:952,2925,224,351
+offsets:0,3,224,354
+rotate:90
+skin2/F-hair 3
+bounds:366,3579,124,361
+offsets:0,1,124,362
+rotate:90
+skin2/F-hair 4
+bounds:1581,3526,158,391
+offsets:0,3,158,394
+rotate:90
+skin2/L-BACK ACC
+bounds:2377,2243,307,454
+rotate:90
+skin2/L-bal
+bounds:2728,2823,288,237
+skin2/L-eye DN
+bounds:798,3704,163,46
+offsets:12,9,175,58
+skin2/L-eye MID 2
+bounds:3348,3649,226,101
+offsets:7,13,233,119
+skin2/L-eye TOP
+bounds:371,3722,200,28
+offsets:1,1,203,30
+skin2/L-eye base
+bounds:2811,3673,121,77
+skin2/L-hair
+bounds:2814,1818,320,778
+rotate:90
+skin2/L-lens 1
+bounds:1878,3690,60,68
+rotate:90
+skin2/R-BACK ACC
+bounds:1641,2332,313,394
+rotate:90
+skin2/R-bal
+bounds:2,3207,429,196
+offsets:1,0,430,196
+skin2/R-eye DN
+bounds:1514,3694,108,56
+offsets:219,1,331,158
+skin2/R-eye MID 2
+bounds:2936,3671,139,79
+offsets:23,2,164,85
+skin2/R-eye TOP
+bounds:245,3723,122,27
+offsets:0,0,123,27
+skin2/R-eye base
+bounds:2721,3675,86,75
+offsets:1,0,88,75
+skin2/R-hair
+bounds:360,2940,211,588
+rotate:90
+skin2/R-lens 1
+bounds:1278,3698,52,63
+rotate:90
+skin2/Shodow big
+bounds:2,2069,1862,259
+skin2/face shido
+bounds:435,3165,372,199
+offsets:43,34,431,267
+skin2/hair
+bounds:2245,64,501,1207
+offsets:0,3,501,1210
+rotate:90
+skin2/hair 2
+bounds:1284,2649,242,786
+offsets:0,2,242,788
+rotate:90
+skin2/mouse3
+bounds:2,3735,68,15
+
+new_C1_2.png
+size:3885,3728
+filter:Linear,Linear
+Acc 3
+bounds:2574,984,925,1174
+rotate:90
+Body
+bounds:1286,1133,812,1284
+offsets:0,28,812,1346
+rotate:90
+Head 1
+bounds:2,2734,605,709
+offsets:0,0,605,710
+rotate:90
+L-cos 2
+bounds:3002,1913,842,740
+L-dress 4
+bounds:2883,2657,682,1000
+rotate:90
+L-dress1
+bounds:1689,2,978,1021
+offsets:0,8,978,1029
+rotate:90
+L-dress2
+bounds:2,1215,730,1280
+offsets:0,2,731,1282
+rotate:90
+R-cos 2
+bounds:2,2020,708,713
+rotate:90
+R-dress 2
+bounds:2,306,823,1683
+offsets:0,4,823,1687
+rotate:90
+WEPON BASE
+bounds:2,3343,383,3834
+rotate:90
+skin2/Back-hair
+bounds:715,2732,607,827
+offsets:0,42,607,869
+rotate:90
+skin2/COS BACK
+bounds:1546,2670,669,1333
+offsets:0,0,669,1341
+rotate:90
+skin2/COS BASE
+bounds:719,1949,704,2279
+rotate:90
+
+new_C1_3.png
+size:3535,3368
+filter:Linear,Linear
+L-dress3
+bounds:1461,2,1535,2057
+offsets:1,0,1537,2057
+rotate:90
+R-dress2
+bounds:2,1566,1009,1851
+rotate:90
+skin2/COS L-SIDE
+bounds:1857,1541,1034,1427
+rotate:90
+skin2/COS R-SIDE
+bounds:2,524,1038,1455
+offsets:0,1,1038,1456
+rotate:90
+skin2/WEPON2 2
+bounds:2,2579,787,3531
+rotate:90
+
+new_C1_4.png
+size:2486,2102
+filter:Linear,Linear
+Back-dress
+bounds:2,2,2482,2098
+
+new_C1_5.png
+size:2691,2601
+filter:Linear,Linear
+skin2/ACC BACK
+bounds:2,2,2687,2597
+offsets:10,8,2704,2616

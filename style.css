@@ -1,0 +1,186 @@
+/* style.css */
+
+/* 1. 기본 셋업 및 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 1920px;
+    height: 1080px;
+    background-color: #0a0a0a;
+    /* 은은한 보랏빛과 푸른빛이 감도는 프리미엄 배경 */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(91, 56, 231, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 255, 204, 0.05) 0%, transparent 40%),
+        linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
+    display: flex;
+    color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow: hidden;
+}
+
+/* 2. 좌측 사이드바 (글래스모피즘 적용) */
+.sidebar {
+    width: 420px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.sidebar h2 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #00ffcc;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* 3. 커스텀 드롭다운 */
+.skin-select {
+    width: 100%;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none; /* 기본 화살표 숨김 */
+}
+
+.skin-select:hover {
+    border-color: #00ffcc;
+    background: rgba(0, 255, 204, 0.05);
+}
+
+/* 4. 애니메이션 버튼 디자인 */
+#anim-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* 세련된 스크롤바 */
+#anim-buttons::-webkit-scrollbar { width: 3px; }
+#anim-buttons::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+
+.menu-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 22px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: left;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-btn::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; width: 0; height: 100%;
+    background: linear-gradient(90deg, rgba(0, 255, 204, 0.1), transparent);
+    transition: all 0.5s ease;
+}
+
+.menu-btn:hover {
+    color: #00ffcc;
+    border-color: rgba(0, 255, 204, 0.3);
+    transform: translateX(10px);
+    background: rgba(0, 255, 204, 0.02);
+}
+
+.menu-btn:hover::before {
+    width: 100%;
+}
+/* 5. 메인 전시 영역 - 제목 스타일 수정 */
+
+/* 5. 메인 전시 영역 */
+.main-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.main-display h1 {
+    position: absolute;
+    top: 60px;
+    
+    /* 폰트 크기와 두께 최적화 */
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1.2rem; /* 자간을 넓혀 고급스러움 유지 */
+    
+    /* 색상을 순백색에 가깝게 변경 */
+    color: rgba(255, 255, 255, 0.9);
+    
+    /* 텍스트에 은은한 네온 조명 효과 추가 */
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(0, 255, 204, 0.2); /* 캐릭터와 통일감을 주는 민트색 광원 */
+        
+    text-transform: uppercase;
+    pointer-events: none;
+    
+    /* 아래쪽으로 아주 살짝 그라데이션을 주어 입체감 부여 */
+    background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    transition: all 0.5s ease;
+}
+
+/* 마우스를 사이드바 버튼에 올렸을 때 제목이 더 밝아지는 효과 (선택 사항) */
+body:has(.menu-btn:hover) .main-display h1 {
+    color: #fff;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+    transform: scale(1.02);
+}
+
+/* 6. 플레이어 영역 (그림자 효과 강화) */
+#player-container {
+    width: 1200px;
+    height: 800px;
+    background: rgba(0,0,0,0.01); /* 완전 투명보다 미세한 색이 있는 게 렌더링에 유리합니다 */
+    border-radius: 20px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+    
+    /* 추가: 초기 렌더링 강제 유도 */
+    opacity: 1;
+    visibility: visible;
+    transform: translateZ(0); /* GPU 가속 강제 활성화 */
+    will-change: transform;    /* 브라우저에게 변화를 예고하여 최적화 유도 */
+}
+
+/* 하단 버전 정보 등 */
+.sidebar::after {
+    content: 'PREMIUM ART GALLERY';
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.2);
+    margin-top: auto;
+    text-align: center;
+}
