@@ -1,124 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>보형킴의 스파인 아뜨리움</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <!-- <link rel="stylesheet" href="https://unpkg.com/@esotericsoftware/spine-player@4.1.*/dist/spine-player.css">
-    <script src="https://unpkg.com/@esotericsoftware/spine-player@4.1.*/dist/iife/spine-player.js"></script> -->
-
-    <link rel="stylesheet" href="https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/spine-player.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/spine-player.css"
+    />
     <script src="https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/iife/spine-player.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="sidebar">
-        <h2>SELECT SKIN</h2>
-        <select class="skin-select" id="skin-selector" onchange="updateButtonList()">
-            <option value="1">👗 스킨 1</option>
-            <option value="2">🧚 스킨 2</option>
-        </select>
-        <h2>ANIMATIONS</h2>
-        <div id="anim-buttons"></div>
+      <h2>SELECT SKIN</h2>
+      <select
+        class="skin-select"
+        id="skin-selector"
+        onchange="updateButtonList()"
+      >
+        <option value="1">👗 스킨 1</option>
+        <option value="2">🧚 스킨 2</option>
+      </select>
+      <h2>ANIMATIONS</h2>
+      <div id="anim-buttons"></div>
     </div>
 
     <div class="main-display">
-        <h1>보형킴의 스파인 아뜨리움</h1>
-        <div id="player-container"></div>
+      <h1>보형킴의 스파인 아뜨리움</h1>
+      <div id="player-container"></div>
     </div>
 
     <script>
-        let player = new spine.SpinePlayer("player-container", {
-            jsonUrl: "assets/new_C1.json",
-            atlasUrl: "assets/new_C1.atlas",
-            showControls: true,
+      let player = new spine.SpinePlayer("player-container", {
+        jsonUrl: "assets/new_C1.json",
+        atlasUrl: "assets/new_C1.atlas",
+        showControls: true,
 
-            // [핵심] 하얀 상자 제거를 위해 반드시 false 유지
-            // 현재 아틀라스 데이터가 Straight Alpha 방식이므로 false가 정답입니다.
-            premultipliedAlpha: false,
+        // [핵심] 하얀 상자 제거를 위해 반드시 false 유지
+        // 현재 아틀라스 데이터가 Straight Alpha 방식이므로 false가 정답입니다.
+        premultipliedAlpha: true,
 
-            alpha: true,
-            backgroundColor: "#00000000",
+        alpha: true,
+        backgroundColor: "#00000000",
 
-            success: function (p) {
-                // 1. 텍스처 필터 보정
-                // Straight Alpha 모드에서 Linear 필터로 인한 경계면 아티팩트를 최소화합니다.
-                // if (p.atlas && p.atlas.pages) {
-                //     p.atlas.pages.forEach(page => {
-                //         if (page.texture) {
-                //             page.texture.setFilters(spine.TextureFilter.Linear, spine.TextureFilter.Linear);
-                //         }
-                //     });
-                // }
+        // [테스트 핵심] 투명도를 끄고 배경을 빨간색으로 강제
+        preserveDrawingBuffer: true,
+        controlImages: true, // 이미지 로드 방식을 플레이어가 제어하게 함
 
-                if (p.atlas && p.atlas.pages) {
-                    p.atlas.pages.forEach(page => {
-                        if (page.texture) {
-                            // Linear 대신 Nearest로 강제 변경 (경계면 블리딩 억제)
-                            page.texture.setFilters(spine.TextureFilter.Nearest, spine.TextureFilter.Nearest);
-                        }
-                    });
-                }
+        success: function (p) {
+          // 1. 텍스처 필터 보정
+          // Straight Alpha 모드에서 Linear 필터로 인한 경계면 아티팩트를 최소화합니다.
+          if (p.atlas && p.atlas.pages) {
+            p.atlas.pages.forEach((page) => {
+              if (page.texture) {
+                page.texture.setFilters(
+                  spine.TextureFilter.Linear,
+                  spine.TextureFilter.Linear,
+                );
+              }
+            });
+          }
 
-                // 2. UI 버튼 생성 로직 실행
-                if (typeof updateButtonList === 'function') {
-                    updateButtonList();
-                }
+          // if (p.atlas && p.atlas.pages) {
+          //     p.atlas.pages.forEach(page => {
+          //         if (page.texture) {
+          //             // Linear 대신 Nearest로 강제 변경 (경계면 블리딩 억제)
+          //             page.texture.setFilters(spine.TextureFilter.Nearest, spine.TextureFilter.Nearest);
+          //         }
+          //     });
+          // }
 
-                // 3. 물리 엔진 및 첫 프레임 렌더링 강제 활성화
-                // setTimeout을 통해 브라우저 렌더링 루프와 시점을 맞춥니다.
-                setTimeout(() => {
-                    // 스켈레톤 위치 및 변형 계산
-                    p.skeleton.updateWorldTransform();
+          // 2. UI 버튼 생성 로직 실행
+          if (typeof updateButtonList === "function") {
+            updateButtonList();
+          }
 
-                    // 애니메이션 상태를 0초 지점으로 업데이트하여 물리 연산 및 가산 블렌딩(Additive) 적용
-                    p.animationState.update(0);
-                    p.animationState.apply(p.skeleton);
+          // 3. 물리 엔진 및 첫 프레임 렌더링 강제 활성화
+          // setTimeout을 통해 브라우저 렌더링 루프와 시점을 맞춥니다.
+          setTimeout(() => {
+            // 스켈레톤 위치 및 변형 계산
+            p.skeleton.updateWorldTransform();
 
-                    console.log("알파 블렌딩 보정 및 물리 엔진 활성화 완료");
-                }, 100);
-            }
-        });
+            // 애니메이션 상태를 0초 지점으로 업데이트하여 물리 연산 및 가산 블렌딩(Additive) 적용
+            p.animationState.update(0);
+            p.animationState.apply(p.skeleton);
 
-        function createDynamicButtons(animNames) {
-            const selectedSkin = document.getElementById('skin-selector').value;
-            const buttonContainer = document.getElementById('anim-buttons');
+            console.log("알파 블렌딩 보정 및 물리 엔진 활성화 완료");
+          }, 100);
+        },
+      });
 
-            if (player.skeleton) {
-                player.skeleton.setSkinByName(selectedSkin);
-                player.skeleton.setSlotsToSetupPose();
-            }
+      function createDynamicButtons(animNames) {
+        const selectedSkin = document.getElementById("skin-selector").value;
+        const buttonContainer = document.getElementById("anim-buttons");
 
-            const filtered = animNames.filter(name => name.includes(selectedSkin));
-            const targetList = filtered.length > 0 ? filtered : animNames;
+        if (player.skeleton) {
+          player.skeleton.setSkinByName(selectedSkin);
+          player.skeleton.setSlotsToSetupPose();
+        }
 
-            buttonContainer.innerHTML = targetList.map(name => `
+        const filtered = animNames.filter((name) =>
+          name.includes(selectedSkin),
+        );
+        const targetList = filtered.length > 0 ? filtered : animNames;
+
+        buttonContainer.innerHTML = targetList
+          .map(
+            (name) => `
                 <button class="menu-btn" onclick="changeAnim('${name}')">
-                    🎬 ${name.replace('anime/', '').replace(selectedSkin, '').trim() || name}
+                    🎬 ${name.replace("anime/", "").replace(selectedSkin, "").trim() || name}
                 </button>
-            `).join('');
+            `,
+          )
+          .join("");
 
-            if (targetList.length > 0) changeAnim(targetList[0]);
-        }
+        if (targetList.length > 0) changeAnim(targetList[0]);
+      }
 
-        function updateButtonList() {
-            const realAnims = player.skeleton.data.animations.map(a => a.name);
-            createDynamicButtons(realAnims);
-        }
+      function updateButtonList() {
+        const realAnims = player.skeleton.data.animations.map((a) => a.name);
+        createDynamicButtons(realAnims);
+      }
 
-        function changeAnim(name) {
-            if (player.animationState) {
-                try {
-                    player.animationState.setAnimation(0, name, true);
-                } catch (e) {
-                    console.error("재생 실패: " + name);
-                }
-            }
+      function changeAnim(name) {
+        if (player.animationState) {
+          try {
+            player.animationState.setAnimation(0, name, true);
+          } catch (e) {
+            console.error("재생 실패: " + name);
+          }
         }
+      }
     </script>
-</body>
-
+  </body>
 </html>
