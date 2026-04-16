@@ -22,8 +22,8 @@
   { "idx": 20, "name": "운명의 예언자", "description": "미래를 보고 마법을 구사하는 점성술사입니다.", "rink": "assets/2d/021.png" },
   { "idx": 21, "name": "무결의 검성", "description": "검의 끝에서 진리를 찾는 달인입니다.", "rink": "assets/2d/022.png" },
   { "idx": 22, "name": "불사조의 날개", "description": "죽음에서 부활하는 강인한 무인입니다.", "rink": "assets/2d/023.png" },
-  { "idx": 23, "name": "쌍창사", "description": "모든 것을 무로 돌리는 강력한 법사입니다.", "rink": "assets/2d/024.png" }
-  { "idx": 24, "name": "순백의 악사", "description": "모든 것을 무로 돌리는 강력한 법사입니다.", "rink": "assets/2d/026.png" }
-  { "idx": 25, "name": "분홍빛 악어새", "description": "모든 것을 무로 돌리는 강력한 법사입니다.", "rink": "assets/2d/027.png" }
+  { "idx": 23, "name": "쌍창사", "description": "모든 것을 무로 돌리는 강력한 법사입니다.", "rink": "assets/2d/024.png" },
+  { "idx": 24, "name": "순백의 악사", "description": "모든 것을 무로 돌리는 강력한 법사입니다.", "rink": "assets/2d/026.png" },
+  { "idx": 25, "name": "분홍빛 악어새", "description": "모든 것을 무로 돌리는 강력한 법사입니다.", "rink": "assets/2d/027.png" },
   { "idx": 26, "name": "컨텐더", "description": "모든 것을 무로 돌리는 강력한 법사입니다.", "rink": "assets/2d/028.png" }
 ]
