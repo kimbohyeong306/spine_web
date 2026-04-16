@@ -1,128 +1,178 @@
 /* artwork.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&display=swap');
 
-/* 페이지 기본 설정 */
+/* 1. 페이지 기본 설정 (메인 페이지의 프리미엄 배경 이식) */
 body {
   margin: 0;
   padding: 0;
-  background-color: #121212;
+  background-color: #0a0a0a;
+  /* 메인 페이지와 동일한 은은한 보랏빛/푸른빛 배경 */
+  background-image: 
+      radial-gradient(circle at 10% 20%, rgba(91, 56, 231, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(0, 255, 204, 0.05) 0%, transparent 40%),
+      linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
+  background-attachment: fixed; /* 스크롤해도 배경 고정 */
   color: #ffffff;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
 }
 
-/* 상단 네비게이션 */
+/* 2. 상단 네비게이션 (글래스모피즘 적용 및 포인트 컬러 통일) */
 .top-nav {
-  background: #1a1a1a;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #333;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
-  gap: 20px;
+  gap: 30px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .top-nav a {
-  color: #888;
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
 }
 
 .top-nav a:hover {
   color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .top-nav a.active {
-  color: #007acc;
-  border-bottom: 2px solid #007acc;
+  color: #00ffcc; /* 파란색에서 민트색으로 변경 */
+  font-weight: 700;
+  position: relative;
 }
 
-/* 원화 레이아웃 컨테이너 */
+.top-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00ffcc;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+/* 3. 원화 레이아웃 컨테이너 */
 .artwork-page {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 40px;
 }
 
+/* 메인 타이틀 동기화 */
 .artwork-page h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.8rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 255, 204, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
 }
 
 .artwork-page .subtitle {
-  color: #666;
-  margin-bottom: 40px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #00ffcc;
+  opacity: 0.8;
+  margin-bottom: 60px;
+  text-transform: uppercase;
 }
 
-/* 바둑판 그리드 (반응형) */
+/* 4. 바둑판 그리드 */
 .artwork-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
 }
 
-/* 개별 아트 카드 디자인 */
+/* 5. 개별 아트 카드 (메인 메뉴 버튼의 디자인 랭귀지 이식) */
 .art-card {
-  background: #1e1e1e;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid #2a2a2a;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
+  position: relative;
 }
 
+/* 카드 호버 시 네온 및 플로팅 효과 */
 .art-card:hover {
   transform: translateY(-10px);
-  border-color: #007acc;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 255, 204, 0.3);
+  background: rgba(0, 255, 204, 0.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 204, 0.1);
 }
 
-/* 이미지 영역 */
-/* 이미지 영역 수정 */
+/* 6. 이미지 영역 */
 .art-card .img-wrapper {
   width: 100%;
-  height: 350px; /* 원화의 전체 비율을 보기 위해 높이를 조금 더 키우는 것을 추천합니다 */
+  height: 380px;
   overflow: hidden;
-  background: #000; /* 여백이 생길 경우 검은색으로 처리 */
+  background: rgba(0, 0, 0, 0.3); /* 순수 검정 대신 반투명 블랙 */
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .art-card img {
   width: auto;
   height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* 핵심: 이미지가 잘리지 않고 전체 비율이 나오게 함 */
-  transition: transform 0.5s ease;
+  max-width: 90%; /* 이미지에 약간의 여백을 주어 갤러리 액자 느낌 연출 */
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
 }
 
 .art-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* 텍스트 정보 영역 */
+/* 7. 텍스트 정보 영역 */
 .art-info {
-  padding: 20px;
+  padding: 25px;
 }
 
 .art-info h3 {
-  margin: 0 0 12px 0;
-  font-size: 1.2rem;
-  color: #eee;
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.art-card:hover .art-info h3 {
+  color: #00ffcc; /* 마우스 오버 시 제목도 민트색으로 점등 */
 }
 
 .art-info p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 300;
   line-height: 1.6;
-  color: #999;
-  /* 설명이 너무 길 경우 3줄까지만 표시 */
+  color: rgba(255, 255, 255, 0.5);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

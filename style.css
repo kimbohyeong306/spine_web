@@ -9,33 +9,51 @@
     box-sizing: border-box;
 }
 
-/* 상단 네비게이션 */
+/* 2. 상단 네비게이션 (글래스모피즘 적용 및 포인트 컬러 통일) */
 .top-nav {
-    background: #1a1a1a;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #333;
-    display: flex;
-    gap: 20px;
-    position: sticky;
+    position: absolute; /* 화면 최상단에 띄워서 레이아웃 깨짐 방지 */
     top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: 30px;
     z-index: 1000;
 }
 
 .top-nav a {
-    color: #888;
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
 }
 
 .top-nav a:hover {
     color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .top-nav a.active {
-    color: #007acc;
-    border-bottom: 2px solid #007acc;
+    color: #00ffcc;
+    font-weight: 700;
+    position: relative;
+}
+
+.top-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -24px; /* 패딩에 맞춰 밑줄 위치 조정 */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
 }
 
 body {
@@ -61,7 +79,7 @@ body {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border-right: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 80px 50px;
+    padding: 120px 50px 80px 50px; /* 상단 패딩을 80px -> 120px로 늘려 메뉴바 공간 확보 */
     display: flex;
     flex-direction: column;
     z-index: 100;
@@ -166,33 +184,26 @@ body {
 }
 
 .main-display h1 {
-    position: absolute;
-    top: 60px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.8rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(0, 255, 204, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
 
-    /* 폰트 크기와 두께 최적화 */
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 1.2rem;
-    /* 자간을 넓혀 고급스러움 유지 */
-
-    /* 색상을 순백색에 가깝게 변경 */
-    color: rgba(255, 255, 255, 0.9);
-
-    /* 텍스트에 은은한 네온 조명 효과 추가 */
-    text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.5),
-        0 0 20px rgba(0, 255, 204, 0.2);
-    /* 캐릭터와 통일감을 주는 민트색 광원 */
-
-    text-transform: uppercase;
-    pointer-events: none;
-
-    /* 아래쪽으로 아주 살짝 그라데이션을 주어 입체감 부여 */
-    background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    transition: all 0.5s ease;
+.main-display .subtitle {
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #00ffcc;
+  opacity: 0.8;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 /* 마우스를 사이드바 버튼에 올렸을 때 제목이 더 밝아지는 효과 (선택 사항) */
