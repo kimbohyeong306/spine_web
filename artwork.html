@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>보형킴의 디지털 아뜨리움 - ARTWORK</title>
+    <link rel="stylesheet" href="artwork.css" />
+  </head>
+  <body>
+    <nav class="top-nav">
+      <a href="index.html">SPINE</a>
+      <a href="artwork.html" class="active">ARTWORK</a>
+    </nav>
+
+    <div class="artwork-page">
+      <h1>원화 갤러리</h1>
+      <p class="subtitle">보형킴의 캐릭터 원화 포트폴리오입니다.</p>
+      
+      <div id="artwork-container" class="artwork-grid">
+        </div>
+    </div>
+
+    <script>
+      async function fetchArtworks() {
+        const container = document.getElementById("artwork-container");
+        try {
+          const response = await fetch("artworks.json");
+          const data = await response.json();
+          
+          container.innerHTML = data.map(art => `
+            <div class="art-card">
+              <div class="img-wrapper">
+                <img src="${art.rink}" alt="${art.name}" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
+              </div>
+              <div class="art-info">
+                <h3>${art.name}</h3>
+                <p>${art.description}</p>
+              </div>
+            </div>
+          `).join("");
+        } catch (e) {
+          container.innerHTML = "<p>데이터 로딩 실패</p>";
+        }
+      }
+      window.onload = fetchArtworks;
+    </script>
+  </body>
+</html>

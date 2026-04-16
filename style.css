@@ -9,12 +9,41 @@
     box-sizing: border-box;
 }
 
+/* 상단 네비게이션 */
+.top-nav {
+    background: #1a1a1a;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #333;
+    display: flex;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-nav a {
+    color: #888;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+    color: #fff;
+}
+
+.top-nav a.active {
+    color: #007acc;
+    border-bottom: 2px solid #007acc;
+}
+
 body {
     width: 1920px;
     height: 1080px;
     background-color: #0a0a0a;
     /* 은은한 보랏빛과 푸른빛이 감도는 프리미엄 배경 */
-    background-image: 
+    background-image:
         radial-gradient(circle at 10% 20%, rgba(91, 56, 231, 0.1) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(0, 255, 204, 0.05) 0%, transparent 40%),
         linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
@@ -60,7 +89,8 @@ body {
     margin-bottom: 60px;
     cursor: pointer;
     transition: all 0.3s ease;
-    appearance: none; /* 기본 화살표 숨김 */
+    appearance: none;
+    /* 기본 화살표 숨김 */
 }
 
 .skin-select:hover {
@@ -78,8 +108,14 @@ body {
 }
 
 /* 세련된 스크롤바 */
-#anim-buttons::-webkit-scrollbar { width: 3px; }
-#anim-buttons::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+#anim-buttons::-webkit-scrollbar {
+    width: 3px;
+}
+
+#anim-buttons::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
 
 .menu-btn {
     background: rgba(255, 255, 255, 0.02);
@@ -98,7 +134,10 @@ body {
 .menu-btn::before {
     content: '';
     position: absolute;
-    left: 0; top: 0; width: 0; height: 100%;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
     background: linear-gradient(90deg, rgba(0, 255, 204, 0.1), transparent);
     transition: all 0.5s ease;
 }
@@ -113,6 +152,7 @@ body {
 .menu-btn:hover::before {
     width: 100%;
 }
+
 /* 5. 메인 전시 영역 - 제목 스타일 수정 */
 
 /* 5. 메인 전시 영역 */
@@ -128,28 +168,30 @@ body {
 .main-display h1 {
     position: absolute;
     top: 60px;
-    
+
     /* 폰트 크기와 두께 최적화 */
     font-size: 1.5rem;
     font-weight: 300;
-    letter-spacing: 1.2rem; /* 자간을 넓혀 고급스러움 유지 */
-    
+    letter-spacing: 1.2rem;
+    /* 자간을 넓혀 고급스러움 유지 */
+
     /* 색상을 순백색에 가깝게 변경 */
     color: rgba(255, 255, 255, 0.9);
-    
+
     /* 텍스트에 은은한 네온 조명 효과 추가 */
-    text-shadow: 
+    text-shadow:
         0 0 10px rgba(255, 255, 255, 0.5),
-        0 0 20px rgba(0, 255, 204, 0.2); /* 캐릭터와 통일감을 주는 민트색 광원 */
-        
+        0 0 20px rgba(0, 255, 204, 0.2);
+    /* 캐릭터와 통일감을 주는 민트색 광원 */
+
     text-transform: uppercase;
     pointer-events: none;
-    
+
     /* 아래쪽으로 아주 살짝 그라데이션을 주어 입체감 부여 */
     background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+
     transition: all 0.5s ease;
 }
 
@@ -164,15 +206,18 @@ body:has(.menu-btn:hover) .main-display h1 {
 #player-container {
     width: 1200px;
     height: 800px;
-    background: rgba(0,0,0,0.01); /* 완전 투명보다 미세한 색이 있는 게 렌더링에 유리합니다 */
+    background: rgba(0, 0, 0, 0.01);
+    /* 완전 투명보다 미세한 색이 있는 게 렌더링에 유리합니다 */
     border-radius: 20px;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
-    
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
+
     /* 추가: 초기 렌더링 강제 유도 */
     opacity: 1;
     visibility: visible;
-    transform: translateZ(0); /* GPU 가속 강제 활성화 */
-    will-change: transform;    /* 브라우저에게 변화를 예고하여 최적화 유도 */
+    transform: translateZ(0);
+    /* GPU 가속 강제 활성화 */
+    will-change: transform;
+    /* 브라우저에게 변화를 예고하여 최적화 유도 */
 }
 
 /* 하단 버전 정보 등 */
